@@ -5,7 +5,7 @@ import { Meal } from './meal.model';
   selector: 'meal-list',
   inputs: ['mealList'],
   template: `
-  <meal-display *ngFor="#currentKeg of kegList">
+  <meal-display *ngFor="#currentMeal of mealList">
   </meal-display>
   `
 
@@ -13,6 +13,6 @@ import { Meal } from './meal.model';
 export class MealListComponent {
   public mealList: Meal[];
   constructor(){
-    
+
   }
 }
