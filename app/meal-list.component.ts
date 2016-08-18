@@ -12,10 +12,9 @@ import { Meal } from './meal.model';
   directives: [MealComponent],
   template: `
   <meal-display *ngFor="#currentMeal of mealList"
-    (click)="mealClicked(currentmeal)"
+    (click)="mealClicked(currentMeal)"
     [class.selected]="currentMeal === selectedMeal"
     [meal]="currentMeal">
-
   </meal-display>
   `
 
@@ -28,7 +27,7 @@ export class MealListComponent {
     this.onMealSelect = new EventEmitter();
   }
   mealClicked(clickedMeal: Meal): void {
-      console.log(clickedMeal);
+      console.log('child', clickedMeal);
       this.selectedMeal = clickedMeal;
       this.onMealSelect.emit(clickedMeal);
     }
