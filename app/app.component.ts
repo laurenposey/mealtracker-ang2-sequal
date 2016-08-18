@@ -1,6 +1,7 @@
 import { Component, EventEmitter } from 'angular2/core';
-import { Meal } from './meal.model';
 import { MealListComponent } from './meal-list.component';
+import { Meal } from './meal.model';
+
 
 @Component({
   selector: 'my-app',
