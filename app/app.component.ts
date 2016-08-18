@@ -8,7 +8,7 @@ import { MealListComponent } from './meal-list.component';
   template: `
     <div class="container">
       <h1>Meal Tracker</h1>
-      <meal-list *ngFor="#meal of meals" [mealList]="meals">
+      <meal-list *ngFor="#meal of meals" [mealList]="meals" (click)="mealWasSelected(meal)">
         <hr>
         <h3>{{ meal.name }}</h3>
         <h4>Calories: {{ meal.calories }}</h4>
@@ -27,7 +27,7 @@ export class AppComponent {
     new Meal("Mediterranean Parfait", 500, "Greek Yogurt, Cashews, Orange Slices, and Honey")
   ];
   }
-  // mealWasSelected(clickedMeal: Meal): void {
-  //   console.log(clickedMeal)
-  // }
+  mealWasSelected(clickedMeal: Meal): void {
+    console.log(clickedMeal)
+  }
 }
