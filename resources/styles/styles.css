@@ -9,3 +9,8 @@ h1 {
 .selected {
   color: #ff0080;
 }
+
+.task-form {
+  padding: 10px;
+  
+}
