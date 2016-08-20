@@ -19,5 +19,10 @@ h1 {
   margin-left: 10px;
   padding-top: 8px;
   padding-bottom: 8px;
-  color: #604860;
+
+}
+
+.pipe {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
