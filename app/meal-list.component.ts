@@ -22,7 +22,7 @@ import { CaloriePipe } from './calorie.pipe';
     [class.selected]="currentMeal === selectedMeal"
     [meal]="currentMeal">
   </meal-display>
-  <edit-meal-details *ngIf="selectedMeal" [meal]="selectedMeal">
+  <edit-meal-details *ngIf="selectedMeal" [meal]="selectedMeal" class="edit-form">
   </edit-meal-details>
   <new-meal (onSubmitNewMeal)="createMeal($event)"></new-meal>
   `

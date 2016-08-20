@@ -19,10 +19,15 @@ h1 {
   margin-left: 10px;
   padding-top: 8px;
   padding-bottom: 8px;
-
 }
 
 .pipe {
   margin-top: 20px;
   margin-bottom: 20px;
+  align-self: center;
 }
+
+.edit-form {
+  align-self: center;
+  margin: 40px;
+ }
