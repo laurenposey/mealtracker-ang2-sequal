@@ -2,7 +2,7 @@ import { Component, EventEmitter } from 'angular2/core';
 import { MealComponent } from './meal.component';
 import { Meal } from './meal.model';
 import { EditMealDetailsComponent } from './edit-meal-details.component';
-import { NewMealComponent } from './new-meal.component.ts';
+import { NewMealComponent } from './new-meal.component';
 
 @Component({
   selector: 'meal-list',
@@ -33,9 +33,10 @@ export class MealListComponent {
       this.selectedMeal = clickedMeal;
       this.onMealSelect.emit(clickedMeal);
     }
-  createMeal(newMeal: string): void {
+  createMeal(newMeal: string[]): void {
+    console.log(newMeal);
     this.mealList.push(
       new Meal(newMeal[0], parseInt(newMeal[1]), newMeal[2])
-    );
+    )
   }
 }

@@ -5,26 +5,33 @@ import { Meal } from './meal.model';
   selector: 'new-meal',
   outputs: ['onSubmitNewMeal'],
   template: `
-    <div class="meal-form">
-      <h3>New Meal:</h3>
-      <input placeholder="Name" class="col-sm-8 input-lg" #newName>
-      <input placeholder="Calories" class="col-sm-8 input-lg" #newCalories>
-      <input placeholder="Details" class="col-sm-8 input-lg" #newDetails>
+    <h3>New Meal:</h3>
+    <form>
+      <div class="form-group">
+        <input placeholder="Name" class="col-sm-8 input-lg" #newName>
+      </div>
+      <div class= "form-group">
+        <input placeholder="Calories" class="col-sm-8 input-lg" #newCalories>
+      </div>
+      <div class="form-group">
+        <input placeholder="Details" class="col-sm-8 input-lg" #newDetails>
+      </div>
       <button (click)="addMeal(newName, newCalories, newDetails)" class="btn-success btn-lg add-button">Add</button>
-    </div>
+    </form>
   `
 })
 export class NewMealComponent {
-  public onSubmitNewMeal: EventEmitter<String[]>;
+  public onSubmitNewMeal: EventEmitter<string[]>;
   constructor() {
     this.onSubmitNewMeal = new EventEmitter();
   }
-  addMeal(userName: HTMLInputElement, userCalories: HTMLInputElement, userDetails: HTMLInputElement) {
-    var newMeal: String[] = [userName.value, userCalories.value, userDetails.value];
-    this.onSubmitNewMeal.emit(newMeal)
-    console.log(userName);
-    userName.value = '';
-    userCalories.value = '';
-    userDetails.value = '';
+  addMeal(mealName: HTMLInputElement, mealCalories: HTMLInputElement, mealDetails: HTMLInputElement) {
+    var newMeal: string[] = [mealName.value, mealCalories.value, mealDetails.value];
+    console.log('addMeal', newMeal);
+    this.onSubmitNewMeal.emit(newMeal);
+    console.log(mealName);
+    mealName.value = '';
+    mealCalories.value = '';
+    mealDetails.value = '';
   }
 }
